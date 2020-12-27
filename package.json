@@ -1,0 +1,34 @@
+{
+  "name": "@minnow-dev/minnow",
+  "version": "1.0.0",
+  "description": "audit test helpers for hardhat",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "build": "npx tsc --build .",
+    "clean": "npx rimraf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minnow-dev/minnow.git"
+  },
+  "keywords": [
+    "solidity",
+    "ethereum",
+    "hardhat"
+  ],
+  "author": "leekt<leekt216@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/minnow-dev/minnow/issues"
+  },
+  "homepage": "https://github.com/minnow-dev/minnow#readme",
+  "devDependencies": {
+    "hardhat": "^2.0.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "@types/mocha": "^8.0.3",
+    "@nomiclabs/hardhat-ethers": "^2.0.1",
+    "ethers": "^5.0.19"
+  }
+}
