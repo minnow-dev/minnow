@@ -1,5 +1,3 @@
 import { time } from "./src/time";
 
-export {
-  time
-}
+export { time };
