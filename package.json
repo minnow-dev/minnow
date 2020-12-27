@@ -1,6 +1,6 @@
 {
   "name": "@minnow-dev/minnow",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "audit test helpers for hardhat",
   "main": "dist/index.js",
   "scripts": {
