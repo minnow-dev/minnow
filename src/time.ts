@@ -1,26 +1,20 @@
-import "@nomiclabs/hardhat-ethers";
-import { BigNumber, providers, Signer } from "ethers";
-import hre from "hardhat";
-export class Time {
-  async increase(seconds: number) {
-    const ethers = hre.ethers;
-    const signers = await ethers.getSigners();
-    const signer = signers[0];
-    await (signer.provider as providers.JsonRpcProvider).send(
-      "evm_increaseTime",
-      [seconds]
-    );
-    await (signer.provider as providers.JsonRpcProvider).send("evm_mine", []);
-  }
+import { providers } from "ethers";
+import { getProvider } from "./provider";
 
-  async now(): Promise<BigNumber> {
-    const ethers = hre.ethers;
-    const signers = await ethers.getSigners();
-    const signer = signers[0];
-    const res = await (signer.provider as providers.JsonRpcProvider).send(
-      "eth_getBlockByNumber",
-      ["latest", false]
-    );
-    return BigNumber.from(res.timestamp);
-  }
+export async function increase(seconds: number) {
+  const provider = await getProvider();
+  await (provider as providers.JsonRpcProvider).send(
+    "evm_increaseTime",
+    [seconds]
+  );
+  await (provider as providers.JsonRpcProvider).send("evm_mine", []);
+}
+
+export async function now(): Promise<number> {
+  const provider = await getProvider();
+  const res = await (provider as providers.JsonRpcProvider).send(
+    "eth_getBlockByNumber",
+    ["latest", false]
+  );
+  return Number(res.timestamp.toString(10));
 }

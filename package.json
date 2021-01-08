@@ -31,7 +31,9 @@
     "hardhat": "^2.0.6"
   },
   "devDependencies": {
+    "@types/chai": "^4.2.14",
     "@types/mocha": "^8.0.3",
+    "chai": "^4.2.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "tslint": "^6.1.3",

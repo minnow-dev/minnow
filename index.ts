@@ -1,3 +1,3 @@
-import { Time } from "./src/time";
+import * as time from "./src/time";
 
-export { Time };
+export { time };
